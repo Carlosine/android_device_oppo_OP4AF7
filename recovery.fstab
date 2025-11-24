@@ -1,4 +1,4 @@
-/system                      erofs     system                                          flags=display=system;logical
+/system_root                 erofs     system                                          flags=display=system;logical
 /vendor                      erofs     vendor                                          flags=display=vendor;logical
 /product                     ext4      product                                         flags=display=product;logical
 /my_product                  erofs     my_product                                      flags=display=my_product;logical

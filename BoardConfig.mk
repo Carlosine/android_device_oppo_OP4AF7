@@ -107,16 +107,9 @@ TWRP_EVENT_LOGGING := true
 TW_IGNORE_DM_VERITY := true
 TW_NO_DM_VERITY := true
 
-# 禁用 AVB 校验
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-TW_INCLUDE_CRYPTO_FBE_METADATA_DECRYPT := true
 
-# Super partition support
-TW_INCLUDE_LOGICAL := true
-TW_INCLUDE_SUPER := true
 
-# EROFS support
-TW_SUPPORT_EROF := true
+
+
 
 
