@@ -1,5 +1,5 @@
 /system_root                 erofs     system                                          flags=display=system;logical
-/vendor                      erofs     vendor                                          flags=display=vendor;logical
+/vendor                      erofs     vendor                                          flags=display=vendor;logical;first_stage_mount
 /product                     ext4      product                                         flags=display=product;logical
 /my_product                  erofs     my_product                                      flags=display=my_product;logical
 /my_engineering              erofs     my_engineering                                  flags=display=my_engineering;logical
