@@ -1,4 +1,4 @@
-# Android device tree for OPPO PDPM00 (OP4A47)
+# Android device tree for OPPO PDNM00 (OP4AF7)
 
 ```
 #
