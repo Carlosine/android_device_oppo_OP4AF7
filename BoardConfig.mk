@@ -14,7 +14,7 @@ ALLOW_MISSING_DEPENDENCIES := true
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 := 
+TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := generic
 
@@ -58,9 +58,9 @@ ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
-BOARD_INCLUDE_DTB_IN_BOOTIMG := 
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-BOARD_KERNEL_SEPARATED_DTBO := 
+BOARD_KERNEL_SEPARATED_DTBO := true
 endif
 
 # Partitions
@@ -72,10 +72,10 @@ BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
-BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
-BOARD_SUPER_PARTITION_GROUPS := oppo_dynamic_partitions
-BOARD_OPPO_DYNAMIC_PARTITIONS_PARTITION_LIST := system system vendor vendor product product my_product my_product my_engineering my_engineering
-BOARD_OPPO_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
+BOARD_SUPER_PARTITION_SIZE := 9122611200
+BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
+BOARD_OPPO_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product odm my_product my_engineering my_heytap my_stock my_region my_carrier my_preload my_company my_manifest my_bigball
+BOARD_OPPO_DYNAMIC_PARTITIONS_SIZE := 9118416896
 
 # Platform
 TARGET_BOARD_PLATFORM := lito
@@ -87,9 +87,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2021-08-01
-
-# Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
@@ -97,6 +94,7 @@ PLATFORM_VERSION := 16.1.0
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
-TW_SCREEN_BLANK_ON_BOOT := true
-#TW_INPUT_BLACKLIST := "hbtp_vm"
+# 如果触摸失效，可以注释掉下面这一行
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_SCREEN_BLANK_ON_BOOT := false
 TW_USE_TOOLBOX := true
